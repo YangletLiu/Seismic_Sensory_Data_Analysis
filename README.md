@@ -1,1 +1,0 @@
-# Seismic_Tubal_Alt_Min
