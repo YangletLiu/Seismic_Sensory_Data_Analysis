@@ -6,11 +6,13 @@ close all;
 
 %% data loading
 % load('T_synthetic_tuabl_rank_3_32_32_300.mat');%T = T(11:21, 11:21, 81:200); %
-load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
+% load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
 % load('T_synthetic_tuabl_rank_3.mat'); T = T(1:11, 1:11, 1:120);   %加载我们自己合成的人工合成数据;
 % load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %加载真实地震数据
 % load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');T = T(:, :, 1:200);  %加载真实地震数据
 
+load('volume.mat');
+T = volume(:,:,:);
 
 % m   = 60;    % the tensor is m * n * k
 % n   = 60;
@@ -24,14 +26,17 @@ tubalRank = LowTubalCDF(T, 1);
 % r = tubalRank;
 
 
-%% transform dimension
-T1 = permute(T,[3,1,2]);% 时间维成为第一维，第三维为crossline，crossline缺失。
+% %% transform dimension  %volume数据不需要转换维度。
+% T1 = permute(T,[3,1,2]);% 时间维成为第一维，第三维为crossline，crossline缺失。
+T1 = T;
 
-%% tubalRank after transform dimension
-tubalRank2 = LowTubalCDF(T1, 1);
-% % %tubal-rank为7，具体看tSVD分解后，S中的元素在i=20的时候才会小于0
-r = tubalRank2;  
-% r = 20;  
+
+
+% %% tubalRank after transform dimension
+% tubalRank2 = LowTubalCDF(T1, 1);
+% % % %tubal-rank为7，具体看tSVD分解后，S中的元素在i=20的时候才会小于0
+% r = tubalRank2;  
+% % r = 20;  
 
 %% Slice sampling
 szT1 = size(T1);
