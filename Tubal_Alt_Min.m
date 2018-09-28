@@ -11,7 +11,7 @@ close all;
 % load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %加载真实地震数据
 % load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');T = T(:, :, 1:200);  %加载真实地震数据
 
-load('volume.mat');
+load('volume.mat');  %数据大小：341*431*531
 T = volume(:,:,:);
 
 % m   = 60;    % the tensor is m * n * k
