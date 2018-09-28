@@ -23,8 +23,9 @@ T = volume(:,:,:);
 
 szT = size(T);   
 tubalRank = LowTubalCDF(T, 1);
-% r = tubalRank;
-
+% 45/341 = 0.13196.
+r = tubalRank;%r=45,当i=46时，SVD分解之后的S，S(i,i,1)在10^5这个数量级调节程序。增大r.
+% r = 50
 
 % %% transform dimension  %volume数据不需要转换维度。
 % T1 = permute(T,[3,1,2]);% 时间维成为第一维，第三维为crossline，crossline缺失。
@@ -109,7 +110,7 @@ RSE =  norm(T_est(:) - T(:)) / norm(T(:));
 %% figure 画第五个slice。
 figure;
 subplot(1,3,1);
-SeisPlot(T(:,5, :),{'figure', 'old'});
+SeisPlot(squeeze(T(:,5, :))',{'figure', 'old'});
 xlabel('CMP x number');ylabel('Time(ms)')
 subplot(1,3,2);
 SeisPlot(squeeze(T_omega(:,:, 5))',{'figure', 'old'});
