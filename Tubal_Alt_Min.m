@@ -6,13 +6,13 @@ close all;
 
 %% data loading
 % load('T_synthetic_tuabl_rank_3_32_32_300.mat');%T = T(11:21, 11:21, 81:200); %
-% load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('T_synthetic_tuabl_rank_3.mat'); T = T(1:11, 1:11, 1:120);   %¼ÓÔØÎÒÃÇ×Ô¼ººÏ³ÉµÄÈË¹¤ºÏ³ÉÊı¾İ;
-% load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %¼ÓÔØÕæÊµµØÕğÊı¾İ
-% load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');T = T(:, :, 1:200);  %¼ÓÔØÕæÊµµØÕğÊı¾İ
+ load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
+% load('T_synthetic_tuabl_rank_3.mat'); T = T(1:11, 1:11, 1:120);   %åŠ è½½æˆ‘ä»¬è‡ªå·±åˆæˆçš„äººå·¥åˆæˆæ•°æ®;
+% load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %åŠ è½½çœŸå®åœ°éœ‡æ•°æ®
+% load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');T = T(:, :, 1:200);  %åŠ è½½çœŸå®åœ°éœ‡æ•°æ®
 
-load('volume.mat');  %Êı¾İ´óĞ¡£º341*431*531
-T = volume(:,:,:);
+% load('volume.mat');  %æ•°æ®å¤§å°ï¼š341*431*531
+% T = volume(:,:,:);
 
 % m   = 60;    % the tensor is m * n * k
 % n   = 60;
@@ -24,20 +24,20 @@ T = volume(:,:,:);
 szT = size(T);   
 tubalRank = LowTubalCDF(T, 1);
 % 45/341 = 0.13196.
-r = tubalRank;%r=45,µ±i=46Ê±£¬SVD·Ö½âÖ®ºóµÄS£¬S(i,i,1)ÔÚ10^5Õâ¸öÊıÁ¿¼¶µ÷½Ú³ÌĞò¡£Ôö´ór.
+% r = tubalRank;%r=45,å½“i=46æ—¶ï¼ŒSVDåˆ†è§£ä¹‹åçš„Sï¼ŒS(i,i,1)åœ¨10^5è¿™ä¸ªæ•°é‡çº§è°ƒèŠ‚ç¨‹åºã€‚å¢å¤§r.
 % r = 50
 
-% %% transform dimension  %volumeÊı¾İ²»ĞèÒª×ª»»Î¬¶È¡£
-% T1 = permute(T,[3,1,2]);% Ê±¼äÎ¬³ÉÎªµÚÒ»Î¬£¬µÚÈıÎ¬Îªcrossline£¬crosslineÈ±Ê§¡£
-T1 = T;
+%% transform dimension  %volumeæ•°æ®ä¸éœ€è¦è½¬æ¢ç»´åº¦,T_synthetic_tuabl_rank_2éœ€è¦è½¬æ¢ç»´åº¦ã€‚
+T1 = permute(T,[3,1,2]);% æ—¶é—´ç»´æˆä¸ºç¬¬ä¸€ç»´ï¼Œç¬¬ä¸‰ç»´ä¸ºcrosslineï¼Œcrosslineç¼ºå¤±ã€‚
+% T1 = T;
 
 
 
 % %% tubalRank after transform dimension
-% tubalRank2 = LowTubalCDF(T1, 1);
-% % % %tubal-rankÎª7£¬¾ßÌå¿´tSVD·Ö½âºó£¬SÖĞµÄÔªËØÔÚi=20µÄÊ±ºò²Å»áĞ¡ÓÚ0
-% r = tubalRank2;  
-% % r = 20;  
+tubalRank2 = LowTubalCDF(T1, 1);
+% % % %tubal-rankä¸º7ï¼Œå…·ä½“çœ‹tSVDåˆ†è§£åï¼ŒSä¸­çš„å…ƒç´ åœ¨i=20çš„æ—¶å€™æ‰ä¼šå°äº0ã€‚
+% r = tubalRank;  å¢å¤§rã€‚
+r = 20;  
 
 %% Slice sampling
 szT1 = size(T1);
@@ -52,7 +52,7 @@ end
 
 
 %% 5-th frontal slice missing  
-%×îÖÕ»­Í¼»­µÚÎå¸öslice,µÚÎå¸öÃæÈ±Ê§Ö÷ÒªÊÇÎªÁË»­Í¼·½±ã
+%æœ€ç»ˆç”»å›¾ç”»ç¬¬äº”ä¸ªslice,ç¬¬äº”ä¸ªé¢ç¼ºå¤±ä¸»è¦æ˜¯ä¸ºäº†ç”»å›¾æ–¹ä¾¿
 omega(:,:,5)=zeros(szT1(1),szT1(2));
 
 
@@ -107,7 +107,7 @@ T_est = tprod(X_est, Y_est);
 RSE =  norm(T_est(:) - T(:)) / norm(T(:));
 
 
-%% figure »­µÚÎå¸öslice¡£
+%% figure ç”»ç¬¬äº”ä¸ªsliceã€‚
 figure;
 subplot(1,3,1);
 SeisPlot(squeeze(T(:,5, :))',{'figure', 'old'});
