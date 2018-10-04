@@ -6,7 +6,7 @@ close all;
 
 %% data loading
 % load('T_synthetic_tuabl_rank_3_32_32_300.mat');%T = T(11:21, 11:21, 81:200); %
- load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
+load('T_synthetic_tuabl_rank_2.mat');T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
 % load('T_synthetic_tuabl_rank_3.mat'); T = T(1:11, 1:11, 1:120);   %加载我们自己合成的人工合成数据;
 % load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %加载真实地震数据
 % load('05HBC3D_ALL_POST_MIG_200_25_601_T.mat');T = T(:, :, 1:200);  %加载真实地震数据
@@ -23,7 +23,7 @@ close all;
 
 szT = size(T);   
 tubalRank = LowTubalCDF(T, 1);
-% 45/341 = 0.13196.
+% volume.mat 45/341 = 0.13196.
 % r = tubalRank;%r=45,当i=46时，SVD分解之后的S，S(i,i,1)在10^5这个数量级调节程序。增大r.
 % r = 50
 
