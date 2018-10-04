@@ -110,7 +110,7 @@ RSE =  norm(T_est(:) - T(:)) / norm(T(:));
 %% figure 画第五个slice。
 figure;
 subplot(1,3,1);
-SeisPlot(squeeze(T(:,5, :))',{'figure', 'old'});
+SeisPlot(T(:,5, :),{'figure', 'old'});
 xlabel('CMP x number');ylabel('Time(ms)')
 subplot(1,3,2);
 SeisPlot(squeeze(T_omega(:,:, 5))',{'figure', 'old'});
