@@ -3,6 +3,8 @@ Two m files in the error folder:
 2. Tubal_tnn.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm.
 3. The TNN_solver folder is some functions of the TNN algorithm.
 
+In the Plot_Seismic folder：
+the function of plotting the seismic data. Seislab.zip needs to be decompressed.
 
 T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64*64*256. Three dimensions are inline,crossline,time respectively. 
 According to the characteristics of the seismic data, missing slices only can be along the inline or crossline direction rather than time direction. You need to convert dimensions if you solve the tensor completion problem with slice missing.
@@ -19,6 +21,7 @@ error文件夹中的两个m文件：
 2.Tubal_TNN.m比较Tubal_Alt_Min算法和TNN算法之间的恢复精度和收敛速度。
 3.TNN_solver文件夹中是关于TNN算法的函数。
 
+Plot_Seismic文件夹中关于绘制地震数据的函数，seislab.zip需要解压缩。
 
 
 T_synthetic_tubal_rank_2.mat是合成的地震数据集，大小为：64*64*256,三个维度分别代表,inline,crossline,time。实际做面缺失的时候需要转换维度。
