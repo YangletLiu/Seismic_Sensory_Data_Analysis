@@ -6,6 +6,9 @@ Two m files in the error folder:
 In the Plot_Seismic folder：
 the function of plotting the seismic data. Seislab.zip needs to be decompressed.
 
+In the Plot_CDF folder:
+the function of the test low-tubal-rank character of the seismic data in three different dimensions.
+
 T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64*64*256. Three dimensions are inline,crossline,time respectively. 
 According to the characteristics of the seismic data, missing slices only can be along the inline or crossline direction rather than time direction. You need to convert dimensions if you solve the tensor completion problem with slice missing.
 
@@ -21,7 +24,7 @@ error文件夹中的两个m文件：
 2.Tubal_TNN.m比较Tubal_Alt_Min算法和TNN算法之间的恢复精度和收敛速度。
 3.TNN_solver文件夹中是关于TNN算法的函数。
 
-Plot_CDF文件夹中是测试三个不同维度的低秩性的函数。
+Plot_CDF文件夹中是测试数据三个不同维度的低秩性的函数。
 
 
 Plot_Seismic文件夹中关于绘制地震数据的函数，seislab.zip需要解压缩。
