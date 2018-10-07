@@ -21,6 +21,9 @@ error文件夹中的两个m文件：
 2.Tubal_TNN.m比较Tubal_Alt_Min算法和TNN算法之间的恢复精度和收敛速度。
 3.TNN_solver文件夹中是关于TNN算法的函数。
 
+Plot_CDF文件夹中是测试三个不同维度的低秩性的函数。
+
+
 Plot_Seismic文件夹中关于绘制地震数据的函数，seislab.zip需要解压缩。
 
 
