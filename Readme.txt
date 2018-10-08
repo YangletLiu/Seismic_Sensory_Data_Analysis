@@ -1,3 +1,11 @@
+真实地震数据图：
+
+
+
+
+
+
+
 Two m files in the error folder:
 1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing.
 2. Tubal_tnn.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm.
