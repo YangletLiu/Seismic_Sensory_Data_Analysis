@@ -1,5 +1,5 @@
 真实地震数据图：<br>
-![]()
+![](https://github.com/hust512/Seismic_Data/blob/master/recover_data.jpg)
 
 
 
