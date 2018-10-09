@@ -1,3 +1,18 @@
+In the Data_preprocessing folder: 
+The data doesn't work very well when we set the tubal-rank too low during data preprocessing. When tubal-rank is 15, you can see that the rank approximation result has some new noise. When tubal-rank is 32, we can get a good approximation result.
+
+
+
+Data_preprocessing文件夹中放地震数据预处理的图。可以看到，数据在进行低秩性处理的过程中，当tubal-rank设置过低时，效果并不是很好。当tubal-rank设置为15时，可以看到秩近似后的图像有些地方添加了新的噪声。tubal-rank设置为32较合理。
+
+
+
+
+
+
+
+
+
 Two m files in the error folder:
 1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing.
 2. Tubal_tnn.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm.
