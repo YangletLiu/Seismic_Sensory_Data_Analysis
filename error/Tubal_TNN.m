@@ -4,10 +4,7 @@ close all;
 % profile ong
 
 %% data loading
-% load('T_synthetic_tuabl_rank_3_32_32_300.mat');%T = T(11:21, 11:21, 81:200); %
-load('T_synthetic_tuabl_rank_2.mat');% T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
-% load('T_synthetic_tuabl_rank_3.mat'); T = T(1:11, 1:11, 1:120);   %加载我们自己合成的人工合成数据;
-% load('traces_100_100_1000.mat'); T = T(1:32, 1:32, 1:256);      %加载真实地震数据
+load('T_synthetic_tuabl_rank_2.mat');   %加载我们自己合成的人工合成数据;
 
 
 % load('volume.mat');%真实地震数据
@@ -17,11 +14,16 @@ load('T_synthetic_tuabl_rank_2.mat');% T = T(:, :, 1:256);   %加载我们自己合成的
 
 szT = size(T);   
 tubalRank = LowTubalCDF(T, 1);
-r = tubalRank;
+
 
 srs = [0.05 : 0.05 : 0.2];
 sampling_rse = zeros(2, length(srs));
-T1 = T;
+T1 = permute(T,[3,1,2]);
+
+%% 调节tubal-rank
+tubalRank2 = LowTubalCDF(T1, 1);
+r = tubalRank2;
+
 
 for i = 1 : 10
 for loop = 1 : length(srs)
@@ -48,11 +50,10 @@ omega_f = fft(omega, [], 3);
 
 
 %% Alternating Minimization
-%% X: m * r * k
-%% Y: r * n * k
+% X: m * r * k
+% Y: r * n * k
 %% Given Y, do LS to get X
     Y = rand(r, n, k);
-% Y = InitY(T_omega, r);
     Y_f = fft(Y, [], 3);
 
 %% do the transpose for each frontal slice
