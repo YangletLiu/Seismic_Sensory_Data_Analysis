@@ -5,6 +5,7 @@ close all;
 
 %% data loading
 load('T_synthetic_tuabl_rank_2.mat');  %加载我们自己合成的人工合成数据;
+%load('volume.mat'); T = volume(:,:,:); %真实地震数据大小：326*431*531
 
 
 %% 测试3个不同方向的CDF.
