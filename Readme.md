@@ -11,7 +11,7 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
 
 **Processed data**
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
 
 Two m_files in the error folder:
 ==
