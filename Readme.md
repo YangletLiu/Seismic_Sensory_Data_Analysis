@@ -8,7 +8,7 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
 
 
-Two m files in the error folder:
+Two m_files in the error folder:
 ==
 1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing. <br>
 2. Tubal_tnn.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm. <br>
