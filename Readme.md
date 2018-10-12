@@ -4,6 +4,8 @@ The data doesn't work very well when we set the tubal-rank too low during data p
 When tubal-rank is 15, you can see that the rank approximation result has some new noise.  <br>
 When tubal-rank is 32, we can get a good approximation result. <br>
 
+![]()
+
 Two m files in the error folder:
 ==
 1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing. <br>
