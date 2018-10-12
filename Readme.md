@@ -5,8 +5,7 @@ When tubal-rank is 15, we can see that the rank approximation result has some ne
 When tubal-rank is 32, we can get a good approximation result. <br>
 
 **The CDF of singular values for the seismic data, compared with processed data.**
-
-![The CDF of singular values for the seismic data, compared with processed data.](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
 
 Two m files in the error folder:
 ==
@@ -20,7 +19,7 @@ the function of the test low-tubal-rank character of the seismic data in three d
 
 
 
-T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64*64*256. Three dimensions are inline,crossline,time respectively. <br> 
+T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64*64 *256. Three dimensions are inline,crossline,time respectively. <br> 
 
 The experimental data of size 326*431*531. The three dimensions are: time,inline and crossline. tubal-rank: 45. <br>
 
