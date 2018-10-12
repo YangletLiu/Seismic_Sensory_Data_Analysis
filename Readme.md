@@ -7,11 +7,12 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 **The CDF of singular values for the seismic data, compared with processed data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
 
-**Original data**
+**Original data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
 
-**Processed data**
+**Processed data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
+
 
 Two m_files in the error folder:
 ==
