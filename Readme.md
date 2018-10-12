@@ -7,6 +7,11 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 **The CDF of singular values for the seismic data, compared with processed data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
 
+**Original data**
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
+
+**Processed data**
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
 
 Two m_files in the error folder:
 ==
@@ -19,8 +24,8 @@ In the Plot_CDF folder:
 the function of the test low-tubal-rank character of the seismic data in three different dimensions. <br>
 
 
-**T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64*64 *256. Three dimensions are inline,crossline,time respectively.**<br>
+**T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64 * 64 * 256. Three dimensions are inline,crossline,time respectively.**<br>
 
-**The experimental data of size 326*431 *531. The three dimensions are: time,inline and crossline. tubal-rank: 45.**<br>
+**The experimental data of size 326 * 431 * 531. The three dimensions are: time,inline and crossline. tubal-rank: 45.**<br>
 
 **The tubal_alt_min.m file is the calculate RSE under the slice missing.**<br>
