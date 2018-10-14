@@ -14,6 +14,12 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
 
 
+The result of Tubal-Alt-Min algorithm:
+==
+**data size: t* m * n:120* 120 * 120, tubal-rank:9.**
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/tubal_alt_min_result.png)
+
+
 Two m_files in the error folder:
 ==
 1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing. <br>
