@@ -17,7 +17,7 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 The result of Tubal-Alt-Min algorithm:
 ==
 **data size: t * m * n: 120 * 120 * 120, tubal-rank:9. RSE:1.08e-02.**
-
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/tubal_alt_min_result.png)
 
 (a) Slice view of the original noise-free complete data. <br>
 (b) Slice view of destroyed data with 1% slices missing. <br>
