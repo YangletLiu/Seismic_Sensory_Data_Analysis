@@ -38,4 +38,4 @@ the function of the test low-tubal-rank character of the seismic data in three d
 
 **The experimental data of size 326 * 431 * 531. The three dimensions are: time,inline and crossline. tubal-rank: 45.**<br>
 
-**The tubal_alt_min.m file is the calculate RSE under the slice missing**<br>
+**The tubal_alt_min.m file is the calculate RSE under the slice missing.**<br>
