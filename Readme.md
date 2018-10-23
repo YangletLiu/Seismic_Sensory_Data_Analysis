@@ -16,7 +16,7 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 Result:
 ==
 
-The result of Tubal-Alt-Min algorithm:
+The result of TNN algorithm and Tubal-Alt-Min algorithm:
 --
 **data size: t * m * n: 120 * 120 * 120, tubal-rank:9. RSE:1.08e-02.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/slicemissingrecovery.png)
@@ -27,6 +27,8 @@ The result of Tubal-Alt-Min algorithm:
 
 The error of TNN algorithm and Tubal-Alt-Min algorithm:
 --
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/tubal_TNN_error.png)
+The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
 
 Two m_files in the error folder:
