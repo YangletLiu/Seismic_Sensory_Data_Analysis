@@ -13,15 +13,21 @@ When tubal-rank is 32, we can get a good approximation result. <br>
 **Processed data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/tubal_rank_32_approximate_data.png)
 
+Result:
+==
 
 The result of Tubal-Alt-Min algorithm:
-==
+--
 **data size: t * m * n: 120 * 120 * 120, tubal-rank:9. RSE:1.08e-02.**
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/tubal_alt_min_result.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/slicemissingrecovery.png)
 
-(a) Slice view of the original noise-free complete data. <br>
-(b) Slice view of destroyed data with 1% slices missing. <br>
-(c) Slice view of recovery data with 1% slices missing. <br>
+(a) Slice view of the original complete data. <br>
+(b) Slice view of reconstructed data using TNN. <br>
+(c) Slice view of reconstructed data using Tubal-Alt-Min. <br>
+
+The error of TNN algorithm and Tubal-Alt-Min algorithm:
+--
+
 
 Two m_files in the error folder:
 ==
