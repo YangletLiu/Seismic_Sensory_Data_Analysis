@@ -36,6 +36,10 @@ The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for va
 
 The figure shows the NRSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
+The NRSE can be formulated as follow:
+
+**NRSE = RSE /(T_obs,max - T_obs,min).**
+
 The recovery result of a special seismic traces in the missing slices:
 --
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/recovery_seismic_traces.png)
