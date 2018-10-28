@@ -42,7 +42,7 @@ The figure shows the NMSE of the Tubal-Alt-Min algorithm and TNN algorithm for v
 
 The MSE and NMSE can be formulated as follow:
 
-**MSE = sqrt(RSE).**
+**MSE = sqrt(RSE).**<br>
 **NMSE = RSE /(T_obs,max - T_obs,min).**
 
 The recovery result of a special seismic traces in the missing slices:
