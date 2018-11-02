@@ -41,10 +41,6 @@ The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for va
 
 run Tubal_TNN.m in the error folder to get the figure
 
-
-The figure shows the recovery result of a special seismic traces in the missing slices by using Tubal-Alt-Min algorithm.<br>
-
-
 Two m_files in the error folder:
 ==
 1. Tubal_Alt_Min_error.m is used to calculate RSE in the case of different slice missing. <br>
