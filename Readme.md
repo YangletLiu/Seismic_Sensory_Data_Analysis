@@ -25,7 +25,7 @@ The result of TNN algorithm and Tubal-Alt-Min algorithm:
 --
 **data size: t * m * n: 300 * 120 * 80, tubal-rank:15.**<br>
 **RSE of TNN:6.1e-03. RSE of Tubal-Alt-Min:1.56e-02.**<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/slicemissingrecovery.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/slicemissingrecovery.png)
 
 (a) Slice view of the original complete data. <br>
 (b) Slice view of reconstructed data using TNN. <br>
@@ -35,7 +35,7 @@ run Tubal_Alt_Min.m to get the result.
 
 The reconstruction error of TNN algorithm and Tubal-Alt-Min algorithm:
 --
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/error_v3.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/error_v3.png)
 
 The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
@@ -59,3 +59,5 @@ the function of the test low-tubal-rank character of the seismic data in three d
 **T_synthetic_tubal_rank_2.mat is a synthetic seismic data set of size: 64 * 64 * 256. Three dimensions are inline,crossline,time respectively.**<br>
 
 **The experimental data of size 326 * 431 * 531. The three dimensions are: time,inline and crossline. tubal-rank: 45.**<br>
+
+**The SeisPlot.zip is the toolbox to plot the seismic data.** <br>
