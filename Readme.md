@@ -41,17 +41,14 @@ The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for va
 
 run Tubal_TNN.m in the error folder to get the figure
 
-The recovery result of a special seismic traces in the missing slices:
---
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/recovery_seismic_traces.png)
 
 The figure shows the recovery result of a special seismic traces in the missing slices by using Tubal-Alt-Min algorithm.<br>
 
 
 Two m_files in the error folder:
 ==
-1. Tubal_alt_min.m is used to calculate RSE in the case of different slice missing. <br>
-2. Tubal_tnn.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm. <br>
+1. Tubal_Alt_Min.m is used to calculate RSE in the case of different slice missing. <br>
+2. Tubal_TNN.m compared the recovery accuracy and convergence speed between Tubal_Alt_Min algorithm and TNN algorithm. <br>
 3. The TNN_solver folder is some functions of the TNN algorithm. <br>
 
 In the Plot_CDF folder:
