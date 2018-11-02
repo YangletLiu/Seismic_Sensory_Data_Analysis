@@ -4,8 +4,13 @@ The data doesn't work very well when we set the tubal-rank too low during data p
 When tubal-rank is 15, we can see that the rank approximation result has some new noise.  <br>
 When tubal-rank is 32, we can get a good approximation result. <br>
 
+
 **The CDF of singular values for the seismic data, compared with processed data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/原始数据与预处理数据的CDF图对比.png)
+
+This figure is obtained by running the test_r_error.m in the Data_preprocessing folder.
+
+
 
 **Original data.**
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Data_preprocessing/original_data.png)
