@@ -23,13 +23,15 @@ Result:
 
 The result of TNN algorithm and Tubal-Alt-Min algorithm:
 --
-**data size: t * m * n: 300 * 120 * 40, tubal-rank:11.**<br>
+**data size: t * m * n: 300 * 120 * 80, tubal-rank:15.**<br>
 **RSE of TNN:6.1e-03. RSE of Tubal-Alt-Min:1.56e-02.**<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/slicemissingrecovery.png)
 
 (a) Slice view of the original complete data. <br>
 (b) Slice view of reconstructed data using TNN. <br>
 (c) Slice view of reconstructed data using Tubal-Alt-Min. <br>
+
+run Tubal_Alt_Min.m to get the result.
 
 The reconstruction error of TNN algorithm and Tubal-Alt-Min algorithm:
 --
