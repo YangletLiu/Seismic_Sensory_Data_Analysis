@@ -39,6 +39,7 @@ The reconstruction error of TNN algorithm and Tubal-Alt-Min algorithm:
 
 The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
+run Tubal_TNN.m in the error folder to get the figure
 
 The recovery result of a special seismic traces in the missing slices:
 --
