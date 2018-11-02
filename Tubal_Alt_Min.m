@@ -5,26 +5,33 @@ close all;
 
 %% data loading
 % load('T_synthetic_tuabl_rank_2.mat'); %加载我们自己合成的人工合成数据;
+% T = T(1:60,1:60,1:100);
 load('volume.mat');  %数据大小：326*431*531
-% T = volume(:,:,:);
+volume = volume(1:300,1:120,1:80);
 
 
 %% 数据预处理
 original_tubalRank = LowTubalCDF(volume,1);
-[U,S,V] = tSVDs(volume,30);
+[U,S,V] = tSVDs(volume,15);
 temp = tprod(U,S);
 T_test = tprod(temp,V);
 T_test_RSE = norm(T_test(:) - volume(:))/ norm(volume(:));
 
 original_tubalRank1 = LowTubalCDF(T_test,1);
-T = T_test(:,:,:);
+T1 = T_test;
 
-szT = size(T);   
-tubalRank = LowTubalCDF(T, 1);
+% m   = 40;    % the tensor is m * n * k
+% n   = 40;
+% k   = 40;
+% r   = 4;        % the tubal-rank
+% T = tprod(rand(m,r,k), rand(r,n,k));
+
+% szT = size(T);   
+% tubalRank = LowTubalCDF(T, 1);
 
 % %% transform dimension  %volume数据不需要转换维度。
 % T1 = permute(T,[3,1,2]);% 时间维成为第一维，第三维为crossline，crossline缺失。
-T1 = T;
+
 
 % %% tubalRank after transform dimension
 % tubalRank2 = LowTubalCDF(T1, 1);
@@ -32,7 +39,7 @@ T1 = T;
 % r = tubalRank2;  
 
 %% 调节秩
-r = tubalRank;
+r = 15;
 
 %% Slice sampling
 szT1 = size(T1);
@@ -98,17 +105,41 @@ temp = 0;
 X_est = ifft(X_f, [], 3); 
 Y_est = ifft(Y_f, [], 3);
 T_est = tprod(X_est, Y_est);
-RSE =  norm(T_est(:) - T(:)) / norm(T(:));
+RSE =  norm(T_est(:) - T1(:)) / norm(T1(:));
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       TNN                                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    normalize              =        max(T1(:))                    ;
+    Xn                     =        T1/normalize                  ;
+    [n1,n2,n3]             =        size(Xn);                      
+
+    alpha                  =        1                             ;
+    rho                    =        0.08                          ;
+    myNorm                 =        'tSVD_1'                      ; % dont change for now
+
+    A                      =        diag(sparse(double(omega(:)))); % sampling operator
+    b                      =        A * Xn(:)                     ; % available data
+    bb                     =        reshape(b,[n1,n2,n3]);
+
+    %% ================ main process of completion =======================
+    [tnnT, tnnCurve]   =    tensor_cpl_admm( A , b , Xn, rho , alpha , ...
+                                            [n1,n2,n3] , 200, myNorm , 0 );
+    tnnT               =        tnnT * normalize                 ;
+    tnnT               =        reshape(tnnT,[n1,n2,n3])         ;
+   TNNQ1 = -20*log10(norm(tnnT(:) - T1(:)) / norm(T1(:)));
+   TNNRSE =  norm(tnnT(:) - T1(:)) / norm(T1(:));
+   fprintf('***********************TNNRSE = %d ***********\n',TNNRSE); 
+   
 
 %% figure 画第五个slice。
-figure;
-subplot(1,3,1);
-SeisPlot(squeeze(T(:,:, 5))',{'figure', 'old'});
-xlabel('CMP x number');ylabel('Time(ms)')
-subplot(1,3,2);
-SeisPlot(squeeze(T_omega(:,:, 5))',{'figure', 'old'});
-xlabel('CMP x number');ylabel('Time(ms)') 
-subplot(1,3,3);
-SeisPlot(squeeze(T_est(:,:,5))',{'figure', 'old'});
-xlabel('CMP x number');ylabel('Time(ms)')
+% figure;
+% subplot(1,3,1);
+% SeisPlot(squeeze(T(:,:, 5))',{'figure', 'old'});
+% xlabel('CMP x number');ylabel('Time(ms)')
+% subplot(1,3,2);
+% SeisPlot(squeeze(tnnT(:,:, 5))',{'figure', 'old'});
+% xlabel('CMP x number');ylabel('Time(ms)') 
+% subplot(1,3,3);
+% SeisPlot(squeeze(T_est(:,:,5))',{'figure', 'old'});
+% xlabel('CMP x number');ylabel('Time(ms)')
