@@ -20,23 +20,6 @@ T_test_RSE = norm(T_test(:) - volume(:))/ norm(volume(:));
 original_tubalRank1 = LowTubalCDF(T_test,1);
 T1 = T_test;
 
-% m   = 40;    % the tensor is m * n * k
-% n   = 40;
-% k   = 40;
-% r   = 4;        % the tubal-rank
-% T = tprod(rand(m,r,k), rand(r,n,k));
-
-% szT = size(T);   
-% tubalRank = LowTubalCDF(T, 1);
-
-% %% transform dimension  %volume数据不需要转换维度。
-% T1 = permute(T,[3,1,2]);% 时间维成为第一维，第三维为crossline，crossline缺失。
-
-
-% %% tubalRank after transform dimension
-% tubalRank2 = LowTubalCDF(T1, 1);
-% % % %tubal-rank2为7，具体看tSVD分解后，S中的元素在i=20的时候才会小于0
-% r = tubalRank2;  
 
 %% 调节秩
 r = 15;
@@ -132,14 +115,14 @@ RSE =  norm(T_est(:) - T1(:)) / norm(T1(:));
    fprintf('***********************TNNRSE = %d ***********\n',TNNRSE); 
    
 
-%% figure 画第五个slice。
-% figure;
-% subplot(1,3,1);
-% SeisPlot(squeeze(T(:,:, 5))',{'figure', 'old'});
-% xlabel('CMP x number');ylabel('Time(ms)')
-% subplot(1,3,2);
-% SeisPlot(squeeze(tnnT(:,:, 5))',{'figure', 'old'});
-% xlabel('CMP x number');ylabel('Time(ms)') 
-% subplot(1,3,3);
-% SeisPlot(squeeze(T_est(:,:,5))',{'figure', 'old'});
-% xlabel('CMP x number');ylabel('Time(ms)')
+% figure 画第五个slice。
+figure;
+subplot(1,3,1);
+SeisPlot(squeeze(T(:,:, 5))',{'figure', 'old'});
+xlabel('CMP x number');ylabel('Time(ms)')
+subplot(1,3,2);
+SeisPlot(squeeze(tnnT(:,:, 5))',{'figure', 'old'});
+xlabel('CMP x number');ylabel('Time(ms)') 
+subplot(1,3,3);
+SeisPlot(squeeze(T_est(:,:,5))',{'figure', 'old'});
+xlabel('CMP x number');ylabel('Time(ms)')
