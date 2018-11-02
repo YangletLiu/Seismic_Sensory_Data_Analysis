@@ -9,7 +9,7 @@ T = volume(:,:,:);
 
 [tubalRank,CDF1] = LowTubalCDF(T, 1);
 
-[U,S,V] = tSVDs(T,32);
+[U,S,V] = tSVDs(T,32); % 调节tSVDs(截断tensor SVD分解的秩，来看误差)
 
 temp = tprod(U,S);
 T_test = tprod(temp,V);
@@ -18,3 +18,6 @@ RSE =  norm(T_test(:) - T(:)) / norm(T(:));
 [tubalRank1,CDF2] = LowTubalCDF(T_test, 1);
 CDF=[CDF1;CDF2];
 PlotCDF1(CDF,[1,2]);
+
+SeisPlot(squeeze(T(:,:, 5))', {'title', 'Original data'});
+SeisPlot(squeeze(T_test(:,:,5))', {'title', 'Recovered data'});
