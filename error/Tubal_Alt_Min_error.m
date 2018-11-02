@@ -5,35 +5,39 @@ close all;
 
 
 %% data loading
-load('T_synthetic_tuabl_rank_2.mat');% T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
-
-% load('volume.mat');
-% T = volume(:,:,:);
-
+% load('T_synthetic_tuabl_rank_2.mat');% T = T(:, :, 1:256);   %加载我们自己合成的人工合成数据;
+load('volume.mat');  %数据大小：326*431*531
+volume = volume(1:300,1:120,1:80);
 
 
-szT = size(T);   
-tubalRank = LowTubalCDF(T, 1);
-r = tubalRank;
+%% 数据预处理
+original_tubalRank = LowTubalCDF(volume,1);
+[U,S,V] = tSVDs(volume,15);
+temp = tprod(U,S);
+T_test = tprod(temp,V);
+T_test_RSE = norm(T_test(:) - volume(:))/ norm(volume(:));
 
-srs = [0.05 : 0.05 : 0.2];
+original_tubalRank1 = LowTubalCDF(T_test,1);
+T1 = T_test;
+
+srs = [0.01 : 0.01 : 0.1];
 sampling_rse = zeros(1, length(srs));
-T1 = permute(T,[3,1,2]);
+
 
 %% 调节tubal-rank
-tubalRank2 = LowTubalCDF(T1, 1);
-r = tubalRank2;
+r = 15;
 
 
+szT1 = size(T1); 
 
 for i = 1 : 10
 for loop = 1 : length(srs)
     samplingrate = srs(loop);
-    MatOmega1 = randsample([0 1],szT(3),true,[samplingrate, 1-samplingrate]);
-    omega = ones(szT(1),szT(2),szT(3));
-    for k=1:szT(3)
+    MatOmega1 = randsample([0 1],szT1(3),true,[samplingrate, 1-samplingrate]);
+    omega = ones(szT1(1),szT1(2),szT1(3));
+    for k=1:szT1(3)
         if(MatOmega1(k)==0)
-           omega(:,:,k)=zeros(szT(1),szT(2));
+           omega(:,:,k)=zeros(szT1(1),szT1(2));
         end
     end
     %% observations
@@ -91,6 +95,6 @@ end
 sampling_rse = sampling_rse ./ 10;
 
 % 重构误差
-figure;semilogy([0.05 : 0.05 : 0.2]*100, sampling_rse(1,:), '+-'); title(['Reconstruction Error']);
+figure;semilogy([0.01 : 0.01 : 0.1]*100, sampling_rse(1,:), '+-'); title(['Reconstruction Error']);
 legend( 'Tubal-Alt-Min'); 
 xlabel('Slice Missing Rate %');ylabel('RSE in log-scale');

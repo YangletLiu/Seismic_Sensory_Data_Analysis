@@ -31,7 +31,7 @@ szT1 = size(T1);
 r = 15;
 
 
-for i = 1 : 3
+for i = 1 : 10
 for loop = 1 : length(srs)
     samplingrate = srs(loop);
     MatOmega1 = randsample([0 1],szT1(3),true,[samplingrate, 1-samplingrate]);
@@ -134,8 +134,8 @@ omega_f = fft(omega, [], 3);
    O_sampling_rse(:, loop) = O_sampling_rse(:, loop) + OriginalRSE(:);
 end
 end
-sampling_rse = sampling_rse ./ 3;
-O_sampling_rse = O_sampling_rse ./ 3;
+sampling_rse = sampling_rse ./ 10;
+O_sampling_rse = O_sampling_rse ./ 10;
 
 % 绘制收敛速度
 len = max([length(TubalAMCurve), length(tnnCurve)]);
