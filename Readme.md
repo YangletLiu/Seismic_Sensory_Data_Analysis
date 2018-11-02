@@ -28,7 +28,7 @@ The result of TNN algorithm and Tubal-Alt-Min algorithm:
 
 The reconstruction error of TNN algorithm and Tubal-Alt-Min algorithm:
 --
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/RSE.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/error_v3.png)
 
 The figure shows the RSE of the Tubal-Alt-Min algorithm and TNN algorithm for varying frontal slice sampling rates from 80% to 98%.<br>
 
