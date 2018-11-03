@@ -97,4 +97,4 @@ sampling_rse = sampling_rse ./ 10;
 % ÷ÿππŒÛ≤Ó
 figure;semilogy([0.01 : 0.01 : 0.1]*100, sampling_rse(1,:), '+-'); title(['Reconstruction Error']);
 legend( 'Tubal-Alt-Min'); 
-xlabel('Slice Missing Rate %');ylabel('RSE in log-scale');
+xlabel('Slice Missing Rate %');ylabel('RSE');
