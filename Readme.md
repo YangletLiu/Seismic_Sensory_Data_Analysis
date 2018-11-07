@@ -67,18 +67,21 @@ Tubal_Alt_Min result and TNN result
 --
 **Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
 
-corrupted data
+corrupted data<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/Corrupted_data.png)
 
-Tubal_Alt_Min recovery data
+Tubal_Alt_Min recovery data<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/Tubal_Recovery_data.png)
 
-TNN recovery data
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/TNN_Recovery_data.png)
+TNN recovery data<br>
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/TNN_recovery_data.png)
 
 run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
 GCG algorithm result
 --
 **GCG RSE:4.907527e-03.**<br>
+GCG recovery data<br>
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
+
 run gcgexample.m in the GCGalgorithm folder to get the result.<br>
