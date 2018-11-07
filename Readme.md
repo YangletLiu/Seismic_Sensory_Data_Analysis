@@ -64,5 +64,7 @@ GCG algorithm result
 ==
 **RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Origina_data.png)
+
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Corrupted_data.png)
+
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
