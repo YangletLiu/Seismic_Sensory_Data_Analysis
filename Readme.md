@@ -64,19 +64,10 @@ Tubal-sampling result
 
 Tubal_Alt_Min result and TNN result
 --
-**tubal-sampling : 50%.Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**
-
+**tubal-sampling : 50%.Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
+run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
 GCG algorithm result(Comparison algorithm)
 --
 **RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
-Original data:<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Original_data.png)
-
-Corrupted data:<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Corrupted_data.png)
-
-Recovery data:<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
-
-run gcgexample.m in the GCGalgorithm folder to get the result.
+run gcgexample.m in the GCGalgorithm folder to get the result.<br>
