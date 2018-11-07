@@ -59,9 +59,16 @@ the function of the test low-tubal-rank character of the seismic data in three d
 **The SeisPlot.zip is the toolbox to plot the seismic data. You should add path in MATLAB after decompression** <br>
 
 
-
-GCG algorithm result
+Tubal-sampling result
 ==
+
+Tubal_Alt_Min result and TNN result
+--
+**tubal-sampling : 50%.Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**
+
+
+GCG algorithm result(Comparison algorithm)
+--
 **RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
 Original data:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Original_data.png)
