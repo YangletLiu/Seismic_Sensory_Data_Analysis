@@ -10,12 +10,12 @@ load('T_synthetic_tuabl_rank_2.mat');
 % load('traces_100_100_1000.mat'); 
 
 
-szT = size(T);                %ÂéüÂßãÊï∞ÊçÆÂ§ßÂ∞è 
+szT = size(T);                %‘≠ º ˝æ›¥Û–° 
 tubalRank = LowTubalCDF(T, 1);
 
 %% add noise
-% T1 = generatedata (T,10);  %Âä†10dBÁöÑÂô™Â£∞
-T1 = T;  %‰∏çÂä†Âô™Â£∞
+% T1 = generatedata (T,10);  %º”10dBµƒ‘Î…˘
+T1 = T;  %≤ªº”‘Î…˘
 
 
 %% data sampling (tubal-sampling)
@@ -26,36 +26,27 @@ T2 = T1;
 T2(Omega) = 0; 
 Omega = abs(1 - Omega);
 
-%% DCT ÂèòÊç¢
+%% DCT ±‰ªª
 T2_d = tensordct2(T2);
 
 %% GCG algorithm
-lambda = 0.1; %ÁõÆÊ†áÂáΩÊï∞‰∏≠ÁöÑÂèÇÊï∞
+lambda = 0.1; %ƒø±Í∫Ø ˝÷–µƒ≤Œ ˝
 [~,~,c]=size(T2_d);
 for i=1:c
     A = T2_d(:,:,i);
     [a,b]=size(A);
-    [U, S, V] = svd(A);
-    s0 = diag(S);  
-    idx = s0 > lambda;
-    U = U(:, idx);  
-    s = s0(idx) - lambda; 
-    V = V(:, idx);
-    sln_svt = U*diag(s)*V';
-    opt_obj = 0.5*norm(sln_svt - A, 'fro')^2 + lambda * sum(s);
-    fprintf('%3dth frontal slice :%g\n', i);
     
     % use boosting solver
     opts = init_opts();
     r = rank(T2_d(:,:,i));
-    opts.init_rank = r;
+    opts.init_rank = 10;
     X0 = zeros(a, b);
     evalf = [];   % no functor for performance evaluation at each iteration
     [T3(:,:,i), opt_obj_boost_solver,iter, msg] = solve_trace_reg(@(X)my_obj(X,A), lambda, X0, evalf, opts);
 end
   
 
-%% ÈÄÜDCTÂèòÊç¢
+%% ƒÊDCT±‰ªª
 r_T = tensoridct2(T3);
 
 %% figure
