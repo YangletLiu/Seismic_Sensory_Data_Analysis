@@ -71,5 +71,5 @@ run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
 GCG algorithm result
 --
-**RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
+**GCG RSE:4.907527e-03.**<br>
 run gcgexample.m in the GCGalgorithm folder to get the result.<br>
