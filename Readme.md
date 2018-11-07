@@ -57,3 +57,12 @@ the function of the test low-tubal-rank character of the seismic data in three d
 **The experimental data of size 326 * 431 * 531. The three dimensions are: time,inline and crossline. tubal-rank: 45.**<br>
 
 **The SeisPlot.zip is the toolbox to plot the seismic data. You should add path in MATLAB after decompression** <br>
+
+
+
+GCG algorithm result
+==
+**RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Origina_data.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Corrupted_data.png)
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
