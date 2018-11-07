@@ -63,8 +63,9 @@ the function of the test low-tubal-rank character of the seismic data in three d
 GCG algorithm result
 ==
 **RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
-![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Origina_data.png)
-
+Original data:<br>
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Original_data.png)
+Corrupted data:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Corrupted_data.png)
-
+Recovery data:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
