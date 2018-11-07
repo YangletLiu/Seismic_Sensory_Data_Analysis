@@ -72,4 +72,4 @@ Corrupted data:<br>
 Recovery data:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
 
-run gcgexample.m in the GCGalgorithm to get the result.
+run gcgexample.m in the GCGalgorithm folder to get the result.
