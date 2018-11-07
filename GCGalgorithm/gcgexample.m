@@ -10,12 +10,12 @@ load('T_synthetic_tuabl_rank_2.mat');
 % load('traces_100_100_1000.mat'); 
 
 
-szT = size(T);                %Ô­Ê¼Êı¾İ´óĞ¡ 
+szT = size(T);                %åŸå§‹æ•°æ®å¤§å° 
 tubalRank = LowTubalCDF(T, 1);
 
 %% add noise
-% T1 = generatedata (T,10);  %¼Ó10dBµÄÔëÉù
-T1 = T;  %²»¼ÓÔëÉù
+% T1 = generatedata (T,10);  %åŠ 10dBçš„å™ªå£°
+T1 = T;  %ä¸åŠ å™ªå£°
 
 
 %% data sampling (tubal-sampling)
@@ -26,11 +26,11 @@ T2 = T1;
 T2(Omega) = 0; 
 Omega = abs(1 - Omega);
 
-%% DCT ±ä»»
+%% DCT å˜æ¢
 T2_d = tensordct2(T2);
 
 %% GCG algorithm
-lambda = 0.1; %Ä¿±êº¯ÊıÖĞµÄ²ÎÊı
+lambda = 0.1; %ç›®æ ‡å‡½æ•°ä¸­çš„å‚æ•°
 [~,~,c]=size(T2_d);
 for i=1:c
     A = T2_d(:,:,i);
@@ -48,14 +48,14 @@ for i=1:c
     % use boosting solver
     opts = init_opts();
     r = rank(T2_d(:,:,i));
-    opts.init_rank = 10;
+    opts.init_rank = r;
     X0 = zeros(a, b);
     evalf = [];   % no functor for performance evaluation at each iteration
     [T3(:,:,i), opt_obj_boost_solver,iter, msg] = solve_trace_reg(@(X)my_obj(X,A), lambda, X0, evalf, opts);
 end
   
 
-%% ÄæDCT±ä»»
+%% é€†DCTå˜æ¢
 r_T = tensoridct2(T3);
 
 %% figure
