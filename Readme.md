@@ -61,13 +61,12 @@ the function of the test low-tubal-rank character of the seismic data in three d
 
 Tubal-sampling result
 ==
-
+**tubal-sampling : 50%.**<br>
 Tubal_Alt_Min result and TNN result
 --
-**tubal-sampling : 50%.Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
+**Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
 run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
-
-GCG algorithm result(Comparison algorithm)
+GCG algorithm result
 --
 **RSE of GCG:4.907527e-03.tubal-sampling rate : 50%**<br>
 run gcgexample.m in the GCGalgorithm folder to get the result.<br>
