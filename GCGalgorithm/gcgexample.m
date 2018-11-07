@@ -39,7 +39,7 @@ for i=1:c
     % use boosting solver
     opts = init_opts();
     r = rank(T2_d(:,:,i));
-    opts.init_rank = 10;
+    opts.init_rank = r;
     X0 = zeros(a, b);
     evalf = [];   % no functor for performance evaluation at each iteration
     [T3(:,:,i), opt_obj_boost_solver,iter, msg] = solve_trace_reg(@(X)my_obj(X,A), lambda, X0, evalf, opts);
