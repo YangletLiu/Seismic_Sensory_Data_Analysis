@@ -61,6 +61,7 @@ the function of the test low-tubal-rank character of the seismic data in three d
 
 Tubal-sampling result
 ==
+**data size:64* 64* 256, tubalrank:2**<br>
 **tubal-sampling : 50%.**<br>
 
 Tubal_Alt_Min algorithm result and TNN algorithm result:
@@ -78,7 +79,7 @@ TNN recovery data<br>
 
 run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
-reconstruction error (RSE) under different tubal sampling rates:
+reconstruction error (RSE) under different tubal sampling rates:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
 
 GCG algorithm result：
