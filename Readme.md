@@ -63,7 +63,7 @@ Tubal-sampling result
 ==
 **tubal-sampling : 50%.**<br>
 
-Tubal_Alt_Min result and TNN result
+Tubal_Alt_Min algorithm result and TNN algorithm result:
 --
 **Tubal_Alt_Min RSE = 1.289423e-15.TNN RSE = 1.475729e-04．**<br>
 
@@ -78,7 +78,10 @@ TNN recovery data<br>
 
 run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
-GCG algorithm result
+reconstruction error (RSE) under different tubal sampling rates:
+![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
+
+GCG algorithm result：
 --
 **GCG RSE:4.907527e-03.**<br>
 GCG recovery data<br>
