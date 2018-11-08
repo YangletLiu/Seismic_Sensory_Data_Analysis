@@ -1,4 +1,4 @@
-function PlotCDF1(CDF,dimensional)
+function PlotCDF1(CDF, dimensional)
 %UNTITLED 此处显示有关此函数的摘要
 %   此处显示详细说明
 
@@ -14,6 +14,6 @@ for i = 1 : size(CDF, 1)
 end
 % grid on; plot((1:sz)/sz * 100, CDF(4, :), markers(4, :) ,'MarkerSize', 4);hold on;
 % str = [str; ['No FFT transform']];
-grid on; title('Empirical CDF'); xlabel('Top portion of singular value %'); ylabel('CDF');
-legend(str);
+grid on; title('Empirical CDF'); xlabel('Top portion of singular values *100(%)'); ylabel('CDF');
+legend('original data','processed data');
 end
