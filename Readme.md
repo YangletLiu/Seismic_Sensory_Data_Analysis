@@ -61,7 +61,7 @@ the function of the test low-tubal-rank character of the seismic data in three d
 
 Tubal-sampling result
 ==
-**data size:64* 64* 256, tubalrank:2**<br>
+**data size:64 * 64 * 256, tubalrank:2.**<br>
 **tubal-sampling : 50%.**<br>
 
 Tubal_Alt_Min algorithm result and TNN algorithm result:
