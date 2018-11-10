@@ -81,6 +81,7 @@ run Tubal_Alt_Min_TNN_tubal_sampling.m to get the result.<br>
 
 reconstruction error (RSE) under different tubal sampling rates:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
+run tubal_sampling_error.m to get the result.<br>
 
 GCG algorithm result：
 --
