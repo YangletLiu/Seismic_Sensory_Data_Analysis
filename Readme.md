@@ -83,6 +83,7 @@ reconstruction error (RSE) under different tubal sampling rates:<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/Result/tubal_sampling_error.png)
 run tubal_sampling_error.m to get the result.<br>
 
+
 GCG algorithm result：
 --
 **GCG RSE:4.907527e-03.**<br>
@@ -90,3 +91,8 @@ GCG recovery data<br>
 ![](https://github.com/hust512/Seismic_Sensory_Data_Analysis/blob/master/GCGalgorithm/Result/Recovery_data.png)
 
 run gcgexample.m in the GCGalgorithm folder to get the result.<br>
+
+conclusion:
+--
+tubal sampling: 70%. Tubal_Alt_Min RSE:5.504735e-16. TNN RSE:7.84263e-05.  GCG RSE: 2.165258e-03.<br>
+tubal sampling: 30%. Tubal_Alt_Min RSE:4.928588e-07. TNN RSE:3.27454e-03.  GCG RSE: 3.460236e-02.<br>
