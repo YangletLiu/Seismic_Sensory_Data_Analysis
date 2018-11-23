@@ -1,4 +1,6 @@
-%把X的一个lateral slice转换为列向量
+%鎶奨鐨勪竴涓猯ateral slice杞崲涓哄垪鍚戦噺
+%input 锛歑鐨勪竴涓晶鍚戝垏鐗囷紝缁村害锛歯1 x 1 x n3
+%output锛歜缁村害锛氾紙n1xn3锛墄 1
 
 function [b]=vecslice(X)
 [n1,~,n3]=size(X);
