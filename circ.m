@@ -1,3 +1,5 @@
+%产生列向量x的循环矩阵y
+ 
 function [y]=circ(x)
 x=squeeze(x);
 [n,~]=size(x);
