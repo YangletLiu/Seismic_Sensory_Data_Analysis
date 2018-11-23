@@ -1,3 +1,5 @@
+%将原 alter_min_LS_one_step 中部分代码转换为函数后进行调用
+ 
 function [Y_f] = alter_min_LS_one_step_new(T_omega_f, omega_f, X_f)
 % the target dimension: r * s * k
 
@@ -6,7 +8,7 @@ function [Y_f] = alter_min_LS_one_step_new(T_omega_f, omega_f, X_f)
 
 Y_f = zeros(r, n, k);
 
-%���X_f�Ŀ�ԽǾ���
+%Çó½âX_fµÄ¿é¶Ô½Ç¾ØÕó
  X_f_new = blockdiag(X_f);
 
 %% we recover the lateral slice one-by-one.
